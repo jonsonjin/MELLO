@@ -370,8 +370,11 @@ const Contact = () => {
 };
 
 export default function App() {
+  const isGitHubPages = window.location.hostname.includes('github.io');
+  const basename = isGitHubPages ? '/MELLO' : '/';
+
   return (
-    <Router>
+    <Router basename={basename}>
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
